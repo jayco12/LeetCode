@@ -1,5 +1,7 @@
 class Solution:
     def tribonacci(self, n: int) -> int:
+        if n <= 1:
+            return 1
         ans = [None] * (n + 1)
 
         ans[0] = 0
