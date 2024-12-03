@@ -3,7 +3,7 @@ class Solution:
         seen=set()
         for num in nums:
             seen.add(num)
-            if num == original:
+            while original in seen:
                original*=2
             
         return original
