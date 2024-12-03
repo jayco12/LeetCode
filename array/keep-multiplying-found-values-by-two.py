@@ -4,6 +4,6 @@ class Solution:
         for num in nums:
             seen.add(num)
             if original in seen:
-                original=original*2
-           
+               original*=2
+            
         return original
