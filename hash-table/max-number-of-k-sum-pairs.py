@@ -6,11 +6,11 @@ class Solution:
         while i < j:
             if nums[i] + nums[j] == k:
                 count += 1
-                i += 1
-                j -= 1
-            elif nums[i] + nums[j] < k:
-                i += 1  
-            else:
-                j -= 1 
+            i += 1
+            j-=1
+            # elif nums[i] + nums[j] < k:
+            #     i += 1  
+            # else:
+            #     j -= 1 
             
         return count
