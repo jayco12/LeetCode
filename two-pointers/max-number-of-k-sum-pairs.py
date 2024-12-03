@@ -3,12 +3,18 @@ class Solution:
         count=0
         i=0
         freq = {}
+        j=len(nums)-1
+        
 
-        for num in nums:
-            complement = k - num
-            if freq.get(complement, 0) > 0:
+        while i < j:
+            current_sum = nums[i] + nums[j]
+            if current_sum == k:
                 count += 1
-                freq[complement] -= 1 
+                nums.pop(j)  # Remove the larger element first
+                nums.pop(i)  # Then remove the smaller element
+                j -= 2  # Adjust the pointer for the two removed elements
+            elif current_sum < k:
+                i += 1  # Move the left pointer to try increasing the sum
             else:
-                freq[num] = freq.get(num, 0) + 1
+                j -= 1 
         return count
