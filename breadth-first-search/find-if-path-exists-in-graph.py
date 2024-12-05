@@ -6,9 +6,12 @@ class Solution:
         if n==1:
             return True
         for i in range(len(edges)):
-            for j in range(len(edges[i])):
-                if edges[i][j]==source and edges[i][j-1]==destination:
-                    return True
+            print(f"{i}: ", end="")
+            for j in edges[i]:
+                print(j, end=" ")
+            print()
+                # if edges[i][j]==source and edges[i][j-1]==destination:
+                #     return True
         return False
 
     
