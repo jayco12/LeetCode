@@ -3,13 +3,10 @@ class Solution:
         adjacency_list = defaultdict(list)
         for src, dest in edges:
             adjacency_list[src].append(dest)
-            adjacency_list[dest].append(src)  # Since the graph is undirected
-
-        # If source and destination are the same
+            adjacency_list[dest].append(src)  
         if source == destination:
             return True
 
-        # BFS or DFS to check if there's a valid path
         visited = set()
         stack = [source]
 
