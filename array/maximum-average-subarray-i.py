@@ -3,8 +3,6 @@ class Solution:
         n=len(nums)
         s = sum(nums[:k])
         max_sum = s
-        if k==1:
-            return nums[0]
         for i in range(k,n):
             s += nums[i] - nums[i - k]
             max_sum = max(max_sum, s)
