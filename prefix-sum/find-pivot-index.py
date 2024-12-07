@@ -10,4 +10,4 @@ class Solution:
 
             left_sum += nums[i]
 
-        return 0
+        return -1
