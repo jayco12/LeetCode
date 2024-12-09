@@ -6,10 +6,13 @@
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
 
-        for i in range(len(lists)):
+        if not lists:
+            return None
 
-            list2=lists[i]
-            list1 = lists[i - 1]
+        list1 = lists[0]
+
+        for i in range(1, len(lists)):  
+            list2 = lists[i]
 
             dummy=ListNode()
             tail=dummy
@@ -21,8 +24,8 @@ class Solution:
                     tail.next=list2
                     list2=list2.next
                 tail=tail.next
-            if list1:
-                tail.next=list1
-            else:
-                tail.next=list2
-            return dummy.next
+           
+            tail.next = list1 if list1 else list2
+            list1 = dummy.next
+
+        return list1
