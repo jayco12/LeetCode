@@ -10,8 +10,11 @@ class Solution:
 
         while curr is not None:
             next = curr.next
+            print(next)
             curr.next = prev
             prev = curr
+            print(prev)
             curr = next
+            print(curr)
 
         return prev
