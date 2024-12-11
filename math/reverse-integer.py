@@ -8,10 +8,14 @@ class Solution:
             for i in range(len(x)-1, 0, -1):
                 s+=x[i]
             return int(s)
-        if ((-2^31) > int(x[::-1]) > (2^31) - 1) :
+        min_int = -2**31
+        max_int = 2**31 - 1
+
+        # Check if the result is within the 32-bit range
+        if int(x[::-1])< min_int or int(x[::-1]) > max_int:
+        
             return 0
-        else:
-            return int(x[::-1])
+        return int(x[::-1])
             
 
         
