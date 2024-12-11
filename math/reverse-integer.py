@@ -10,7 +10,8 @@ class Solution:
             return int(s)
         if ((-2^31) > int(x[::-1]) > (2^31) - 1) :
             return 0
-        return int(x[::-1])
+        else:
+            return int(x[::-1])
             
 
         
