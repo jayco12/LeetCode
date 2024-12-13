@@ -9,4 +9,4 @@ class Solution:
         if len(word1)!=len(word2):
             return False
         print(seen)
-        return seen == seen2 or freq1==freq2
+        return sorted(freq1.values()) == sorted(freq2.values())
