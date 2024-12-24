@@ -7,6 +7,6 @@ class Solution:
         if dividend == INT_MIN and divisor == -1:
             return INT_MAX
 
-        result = round(dividend / divisor)
+        result = int(dividend / divisor)
 
         return result
