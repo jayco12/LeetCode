@@ -5,15 +5,14 @@ class Solution:
         
         intervals.sort(key=lambda x: x[0])
         
-        merged = [intervals[0]]  
+        result = [intervals[0]]
 
         for i in range(1, len(intervals)):
-            prev_start, prev_end = merged[-1] 
-            curr_start, curr_end = intervals[i]
-
-            if curr_start <= prev_end: 
-                merged[-1][1] = max(prev_end, curr_end)  
-            else:
-                merged.append(intervals[i])  
-        
-        return merged
+            start, end = intervals[i]
+            last_start, last_end = result[-1]
+            
+            if start <= last_end:  
+                result[-1][1] = max(last_end, end)
+            else: 
+                result.append(intervals[i])
+        return result
